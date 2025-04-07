@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    color: white;
+    background-color: #111;
+}
+
+
+.bg-wrapper {
+    position: relative;
+    background-image: url('img/init2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 80px; 
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.head {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+}
+
+
+.selections {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.osama {
+    background-color: rgba(215, 77, 8, 0.767);
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;     
+    display: inline-block;    
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.osama:hover {
+    transform: scale(1.05);
+    background-color: rgba(235, 87, 27, 0.9);
+    box-shadow: 0 0 15px rgba(235, 87, 27, 0.6);
+}
+
+.laden {
+    background-color: rgb(233, 135, 31);
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.laden:hover {
+    transform: scale(1.1);
+    background-color: #ef9e1a;
+    box-shadow: 0 0 12px rgba(240, 187, 27, 0.6);
+}
+
+.buton {
+    background-color: transparent;
+}
+
+
+
+.second {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 80px; 
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    background-color: #dc681b;
+    border-radius: 10px 20px;
+    text-align: center;
+}
+
+.layer {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px black;
+    text-decoration: solid;
+    margin-bottom: 20px;
+}
+
+.sec {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sec img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.sec img:hover {
+    transform: scale(1.05);
+}
+
+
+.head2 {
+    padding: 60px 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+.head2 h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.head2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+@media screen and (max-width: 768px) {
+    .bg-wrapper {
+        background-position: top;
+    }
+
+    .header-container,
+    .heading {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .selections {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sec {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sec img {
+        width: 90%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .layer {
+        font-size: 1.5rem;
+    }
+
+    .head2 h2 {
+        font-size: 1.5rem;
+    }
+
+    .head2 p {
+        font-size: 1rem;
+    }
+}
+
+.selections {
+    perspective: 1000px;
+  }
+  
+  .osama {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+  
+  .sec {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    perspective: 1000px;
+    margin-top: 20px;
+  }
+  
+  .sec img {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }

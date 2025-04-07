@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background Wrapper with immersive effect */
+.bg-wrapper {
+    position: relative;
+    background: radial-gradient(ellipse at center, rgba(8, 10, 20, 0.95), rgba(0, 0, 0, 0.95)), url('/img/init2.jpg') no-repeat center/cover;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px) saturate(60%);
+    z-index: 1;
+}
+
+
+.bg-wrapper::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 0, 122, 0.03) 0px,
+        rgba(255, 0, 122, 0.03) 2px,
+        transparent 2px,
+        transparent 12px
+    );
+    animation: laserMove 15s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes laserMove {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 60px;
+    z-index: 2;
+    position: relative;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.4);
+}
+
+.head {
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 0, 150, 0.8), 0 0 30px rgba(255, 255, 255, 0.2);
+    letter-spacing: 2px;
+}
+
+.atb {
+    font-size: 1.6rem;
+    padding: 0.8em 2.5em;
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #00ffe7);
+    background-size: 400% 400%;
+    animation: idleBackground 6s ease infinite;
+    border: none;
+    border-radius: 16px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.4);
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 30px 0 10px;
+    z-index: 2;
+}
+
+@keyframes idleBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.atb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+/* Animated Info Box with lighting */
+@keyframes shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+.infos {
+    background: rgba(0, 0, 0, 0.75); /* dark glass layer */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* for Safari */
+    color: #f8f8f8; /* off-white for better contrast */
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); /* helps white text stand out */
+    animation: none; /* TEMP: disable shimmer for clarity */
+}
+
+.infos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    z-index: -1;
+}
+
+
+/* Back Button */
+.ter {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    z-index: 2;
+}
+
+.ter:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
+}
+
+.ab {
+    text-align: center;
+    margin-top: 40px;
+    z-index: 2;
+    position: relative;
+}
